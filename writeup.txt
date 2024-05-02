@@ -1,0 +1,18 @@
+Introduction
+I conducted a series of tests on my MiniML interpreter to validate its functionality and robustness across a range of scenarios. These tests covered everything from basic arithmetic to complex function evaluations.
+
+Detailed Observations and Results
+Core Functionality
+Literal Handling: The interpreter adeptly managed integer and boolean literals, affirming its capability to process basic data types accurately.
+Arithmetic Operations: During tests, simple arithmetic operations like addition were handled flawlessly, showcasing the interpreter’s reliable mathematical capabilities.
+Variable Management
+Variable Resolution: I tested variable handling extensively, and the interpreter consistently retrieved correct values for defined variables, indicating robust environment management.
+Error Handling: It correctly identified and reported errors for unbound variables, demonstrating the system's effective error management mechanisms.
+List Manipulations
+List Operations: The creation and manipulation of lists were tested, with the interpreter successfully handling both non-empty and empty lists, proving its ability to manage complex data structures.
+Conditional Logic
+Conditional Evaluation: Conditional expressions were correctly evaluated, with the interpreter choosing the appropriate branches based on given conditions.
+Functions and Recursion
+Nested and Recursive Functions: The interpreter showed its strength in managing higher-order functions and recursive calls. However, an issue was noted with the recursive factorial function, which did not return the expected type, suggesting a need for further review on how recursive values are handled and returned.
+Conclusion
+Overall, the MiniML interpreter demonstrated strong capabilities in handling a variety of programming constructs and operations.
