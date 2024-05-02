@@ -1,0 +1,36 @@
+In my final project for CS 51, I developed and tested an interpreter for a subset of ML, which I named MiniML. This document summarizes the testing processes I employed to ensure that the interpreter functions as intended, adheres to specified requirements, and handles both typical and edge cases effectively.
+
+Scope of the Project
+The MiniML interpreter supports various features of functional programming languages, including:
+
+Basic data types (integers and booleans)
+Unary and binary operations
+Conditional expressions
+Function definitions and applications
+Recursions and closures
+List manipulations
+Error handling through exceptions
+Each component was designed to interact seamlessly, providing a robust interpretation environment that supports complex functional programming paradigms.
+
+Testing Methodology
+I approached testing with a combination of unit and integration tests, focusing on the following aspects:
+
+Functionality Testing: Each feature was tested individually to ensure it performs as expected. For example, arithmetic operations were tested for correct results, while list operations were tested for both valid and empty inputs to ensure stability and correct error handling.
+Integration Testing: After testing individual components, I conducted tests to ensure that they work together as expected. This included testing function applications, especially recursive functions and those involving higher-order functions.
+Edge Case Handling: Special attention was given to how the interpreter handles edge cases, such as recursion limits, operations on empty lists, and unbound variables. These tests are crucial for ensuring the interpreter’s reliability.
+Results and Findings
+The results were largely positive, with the interpreter handling most of the designed test cases successfully. Here are highlights from the test execution:
+
+Basic operations like addition and boolean evaluations were executed flawlessly.
+Function applications, including nested and higher-order functions, were resolved correctly, showcasing the interpreter’s capability to handle complex functional logic.
+Recursive functions and list operations demonstrated the interpreter’s effectiveness in managing memory and stack operations without errors.
+Edge cases, particularly with error handling, were managed gracefully, with the interpreter raising exceptions as designed.
+However, the testing also uncovered a few areas for improvement:
+
+The recursive factorial function did not return the expected result, indicating a potential issue in how recursive environments are handled or possibly in the base case definition.
+Handling of unbound variables was robust, but the error messages could be made more descriptive to aid in debugging.
+Conclusion and Future Work
+Overall, the MiniML interpreter shows promising capabilities in handling a variety of functional programming constructs. Future work will focus on refining error handling and exploring more complex features such as type inference, pattern matching, and support for additional data types.
+
+This project not only reinforced my understanding of functional programming concepts but also enhanced my skills in writing interpreters and managing a software project from conception through to testing and documentation.
+
