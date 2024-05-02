@@ -1,0 +1,31 @@
+### Starting build.
+# Target: miniml.ml.depends, tags: { package(str), extension:ml, file:miniml.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamlfind ocamldep -package str -modules miniml.ml > miniml.ml.depends # cached
+# Target: evaluation.ml.depends, tags: { package(str), extension:ml, file:evaluation.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamlfind ocamldep -package str -modules evaluation.ml > evaluation.ml.depends
+# Target: expr.mli.depends, tags: { package(str), extension:mli, file:expr.mli, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamlfind ocamldep -package str -modules expr.mli > expr.mli.depends # cached
+# Target: expr.cmi, tags: { package(str), byte, compile, extension:mli, file:expr.mli, interf, ocaml, quiet, traverse, use_menhir }
+ocamlfind ocamlc -c -package str -o expr.cmi expr.mli # cached
+# Target: miniml_lex.mll, tags: { package(str), extension:mll, file:miniml_lex.mll, lexer, ocaml, ocamllex, quiet, traverse, use_menhir }
+/Users/nazihbaydoun/.opam/4.12.0/bin/ocamllex.opt -q miniml_lex.mll # cached
+# Target: miniml_lex.ml.depends, tags: { package(str), extension:ml, file:miniml_lex.ml, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamlfind ocamldep -package str -modules miniml_lex.ml > miniml_lex.ml.depends # cached
+# Target: miniml_parse.mly.depends, tags: { package(str), extension:mly, file:miniml_parse.mly, infer, menhir_ocamldep, ocaml, ocamldep, quiet, traverse, use_menhir }
+menhir --raw-depend --ocamldep 'ocamlfind ocamldep -modules' miniml_parse.mly > miniml_parse.mly.depends # cached
+# Target: miniml_parse.mly, tags: { package(str), byte, compile, extension:ml, extension:mly, file:miniml_parse.ml, file:miniml_parse.mly, infer, menhir, ocaml, parser, quiet, traverse, use_menhir }
+menhir --ocamlc 'ocamlfind ocamlc -package str' --infer miniml_parse.mly # cached
+# Target: miniml_parse.mli.depends, tags: { package(str), extension:mli, file:miniml_parse.mli, ocaml, ocamldep, quiet, traverse, use_menhir }
+ocamlfind ocamldep -package str -modules miniml_parse.mli > miniml_parse.mli.depends # cached
+# Target: miniml_parse.cmi, tags: { package(str), byte, compile, extension:mli, file:miniml_parse.mli, interf, ocaml, quiet, traverse, use_menhir }
+ocamlfind ocamlc -c -package str -o miniml_parse.cmi miniml_parse.mli # cached
+# Target: evaluation.cmo, tags: { package(str), byte, compile, extension:cmo, extension:ml, file:evaluation.cmo, file:evaluation.ml, implem, ocaml, quiet, traverse, use_menhir }
+ocamlfind ocamlc -c -package str -o evaluation.cmo evaluation.ml
++ ocamlfind ocamlc -c -package str -o evaluation.cmo evaluation.ml
+File "evaluation.ml", line 99, characters 36-48:
+99 |     eval_s (Expr.subst (Expr.Var v) (eval_s def) body)
+                                         ^^^^^^^^^^^^
+Error: This expression has type Expr.expr
+       but an expression was expected of type Expr.varid = string
+Command exited with code 2.
+# Compilation unsuccessful.
